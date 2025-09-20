@@ -1,14 +1,15 @@
 -- Find companies that have at least 2 users who speak both English and German.
 
 -- Sample table
-create table company_users 
+CREATE TABLE company_users 
 (
 company_id int,
 user_id int,
 language varchar(20)
 );
 
-insert into company_users values (1,1,'English')
+INSERT INTO company_users VALUES
+ (1,1,'English')
 ,(1,1,'German')
 ,(1,2,'English')
 ,(1,3,'German')
