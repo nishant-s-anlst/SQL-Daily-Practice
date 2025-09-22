@@ -22,7 +22,7 @@ INSERT INTO company_users VALUES
 ,(2,6,'Spanish')
 ,(2,7,'English');
 
---Solution
+--SOLUTION
 SELECT company_id 
 FROM company_users
 WHERE user_id IN (
