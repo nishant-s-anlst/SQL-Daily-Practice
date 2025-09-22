@@ -1,4 +1,4 @@
-## Find employees whose salary is greater than their manager’s salary.
+-- Find employees whose salary is greater than their manager’s salary.
 
 --Sample table
 create table emp(emp_id int,emp_name varchar(10),salary int ,manager_id int);
@@ -14,7 +14,7 @@ insert into emp values(8,'Ashish',5000,2);
 
 
 --SOLUTION (BY SELF JOIN)
-SELECT t1.emp_id, t1.emp_name, t2.emp_name AS manager_name FROM emp AS t1
+SELECT t1.emp_id, t1.emp_name, t1.salary AS emp_sal, t2.emp_name AS manager_name, t2.salary AS manager_sal FROM emp AS t1 
 INNER JOIN emp AS t2
 ON t1.manager_id=t2.emp_id
 WHERE t1.salary>t2.salary
