@@ -22,10 +22,10 @@ INSERT INTO tickets (airline_number, origin, destination, oneway_round, ticket_c
 
 
 --SOLUTION 
-SELECT top 1 origin,destination, sum(ticket_count) AS ticket_cnt  FROM (
+SELECT TOP 1 origin, destination, sum(ticket_count) AS ticket_cnt  FROM (
 SELECT origin, destination, ticket_count FROM tickets
 UNION ALL
-SELECT  destination, origin, ticket_count FROM tickets
+SELECT destination, origin, ticket_count FROM tickets
 WHERE oneway_round='r') a
 GROUP BY origin, destination
 ORDER BY ticket_cnt DESC;
